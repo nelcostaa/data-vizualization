@@ -12,6 +12,14 @@ class PasseioAleatorio:
         self.x_values = [0]
         self.y_values = [0]
 
+    def receber_passo(self):
+        """Calcula a direcao e qntd de passos do passeio"""
+        direction = choice([1, -1])
+        distance = choice([0, 1, 2, 3, 4])
+        step = direction * distance
+
+        return step
+
     def preencher_passeio(self):
         """Calcula todos pontos do passeio"""
 
@@ -19,13 +27,8 @@ class PasseioAleatorio:
 
         while len(self.x_values) < self.num_points:
             # Decide qual direcao tomar, e ate onde ir
-            x_direction = choice([1, -1])
-            x_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
-            x_step = x_direction * x_distance
-
-            y_direction = choice([1, -1])
-            y_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
-            y_step = y_direction * y_distance
+            x_step = self.receber_passo()
+            y_step = self.receber_passo()
 
             # Rejeita movimentos que nao vao a lugar algum
             if x_step == 0 and y_step == 0:
