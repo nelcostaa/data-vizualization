@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 from passeio_aleatorio import PasseioAleatorio
 
-# Continua crinado passeios novoos, desde que o programa esteja ativo
+# Continua criando passeios novoos, desde que o programa esteja ativo
 while True:
     # Cria um random walk
     rw = PasseioAleatorio(100_000)
